@@ -1,25 +1,26 @@
 {
-  "name": "AEscola",
-  "version": "1.0.0",
-  "description": "Projeto com Node.Js",
-  "main": "index.js",
-  "scripts": {    
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JuniorJWJ/AEscola.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JuniorJWJ/AEscola/issues"
-  },
-  "homepage": "https://github.com/JuniorJWJ/AEscola#readme",
-  "dependencies": {
-    "express": "^4.17.2",
-    "mongoose": "^6.1.6"
-  }
+    "name": "aescola",
+    "version": "1.0.0",
+    "description": "Projeto com Node.Js",
+    "main": "src/server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JuniorJWJ/AEscola.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/JuniorJWJ/AEscola/issues"
+    },
+    "homepage": "https://github.com/JuniorJWJ/AEscola#readme",
+    "dependencies": {
+        "express": "^4.17.2",
+        "mongoose": "^6.1.6",
+        "nodemon": "^2.0.15"
+    }
 }

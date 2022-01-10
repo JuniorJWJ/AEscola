@@ -8,7 +8,7 @@ const { resolve } = require('path')
 server.set('view engine', 'ejs')
 server.use(express.static("publics"))
 server.set('views', path.join(__dirname, 'views'))
-server.use(express.urlencoded({ extended: true}))
+server.use(express.urlencoded({ extended: true }))
 
 
 server.use(route)
