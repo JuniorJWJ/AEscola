@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const server = express()
 const mongoose = require('mongoose')
@@ -10,6 +11,14 @@ server.use(express.static("publics"))
 server.set('views', path.join(__dirname, 'views'))
 server.use(express.urlencoded({ extended: true }))
 
-
 server.use(route)
-server.listen(3000, () => console.log('server on'))
+
+const dbConnect = process.env.DB_CONNECT
+
+mongoose
+    .connect(`${dbConnect}`)
+    .then(() => {
+        server.listen(3000)
+        console.log('Conectou ao banco!')
+    })
+    .catch((err) => console.log(err))
