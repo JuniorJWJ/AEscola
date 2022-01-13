@@ -8,10 +8,13 @@ route.get('/', (req, res, next) => {
         version: '1.0.0'
     });
 });
-route.get('/AEscola', function(req, res) {
+route.get('/AEscola', async(req, res) => {
     res.status(200).json({ msg: 'Escola' });
 })
 
-
+// 
+route.post('/auth/register', (req, res, next) => {
+    const { login, password, confirmPassword } = req.body
+})
 
 module.exports = route;
