@@ -44,8 +44,7 @@ module.exports = {
             id_colegio_foto,
             email,
             localização
-        }
-        //console.log(colegio)
+        } 
         try {
             console.log("entrou")
             const updatedColegio = await Colegio.updateOne({_id: id}, colegio)
@@ -60,6 +59,23 @@ module.exports = {
             res.status(200).json(colegio)
         } catch (error) {
             res.status(500).json({ error: error})
+        }
+    },
+    async delete(req, res) {
+        const id = req.params.id
+
+        const colegio = await Colegio.findOne({ _id : id})
+
+        if(!colegio){
+            res.status(422).json({ message: 'colegio not found'})
+            return
+        }
+
+        try {
+            await Colegio.deleteOne({ _id: id})
+            res.status(200).json({message:'Colegio deleted'})
+        } catch (error) {
+            res.status()
         }
     }
 }
