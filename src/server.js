@@ -16,12 +16,12 @@ server.use(express.json())
 
 server.use(route)
 
-const dbConnect = process.env.DB_CONNECT
+
 const dbUser = process.env.DB_USER
-const dbPass = process.env.DB_PASS
+const dbPassword = process.env.DB_PASS
 
 mongoose
-    .connect(`mongodb+srv://${dbUser}:${dbPass}@clusteraescola.xu7n4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
+    .connect(`mongodb+srv://${dbUser}:${dbPassword}@clusterescola.si3bn.mongodb.net/Escola?retryWrites=true&w=majority    `)
     .then(() => {
         server.listen(3000)
         console.log('Conectou ao banco!')

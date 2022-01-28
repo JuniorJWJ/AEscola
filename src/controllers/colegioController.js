@@ -1,6 +1,9 @@
 const Colegio = require('../models/Colegio')
 
 module.exports = {
+    async create_colegio_view(req, res){    
+        return res.render("createColegio")
+    },
     async get (req, res){
         try{
             const colegio = await Colegio.find()
@@ -11,15 +14,14 @@ module.exports = {
         }
     },
     async create (req, res){
-        const { nome, id_colegio_turma, id_colegio_comentario, id_colegio_foto, email, localização } = req.body
+        const { nome, email, localização } = req.body
+        const endereco_foto = req.file ? `http://localhost:3000/images/${req.file.filename}` : '' 
     
         const colegio = {
             nome,
-            id_colegio_turma,
-            id_colegio_comentario,
-            id_colegio_foto,
             email,
-            localização
+            localização,
+            endereco_foto
         }
 
         console.log(colegio)
